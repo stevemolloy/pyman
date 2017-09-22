@@ -27,8 +27,8 @@ Minimal Example
     import pyman
 
     pyman.Main( "PyMan - Menu Example", [
-        pyman.Action.Cmd( "Hello World", "echo 'Testing PyMan'" ),
-        pyman.Action.Exit()
+        pyman.Actions.Cmd( "Hello World", "echo 'Testing PyMan'" ),
+        pyman.Actions.Exit()
     ]).cli()
 
 Example Output
@@ -62,10 +62,10 @@ From here you add other Pages or Actions
 .. code-block:: python
 
     menu.add([
-        pyman.Action.Exit()
+        pyman.Actions.Exit()
     ])
 
-pyman.Action.Exit is one of the in-built actions. Other inbuilt actions include:
+pyman.Actions.Exit is one of the in-built actions. Other inbuilt actions include:
 
 * :class:`pyman.Actions.Cmd`
 * :class:`pyman.Actions.Back`
