@@ -11,7 +11,7 @@ class Page( object ):
     def choices( self ):
         i = 1
         for a in self.actions:
-            print "%d%s%s" % ( i, self.menu.chars[2], a.name )
+            print("%d%s%s" % ( i, self.menu.chars[2], a.name ))
             i += 1
 
     def add( self, actions ):

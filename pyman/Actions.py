@@ -1,26 +1,33 @@
 from .Action import Action
 
 
-class Exit( Action ):
+class Exit(Action):
     """Exit the CLI"""
-    def __init__( self ):
-        super( Exit, self ).__init__( "Exit" )
+
+    def __init__(self):
+        super(Exit, self).__init__("Exit")
 
 
-class Back( Action ):
+class Back(Action):
     """Go back one page"""
-    def __init__( self ):
-        super( Back, self ).__init__( "Back" )
+
+    def __init__(self):
+        super(Back, self).__init__("Back")
 
 
-class Cmd( Action ):
+class Cmd(Action):
     """Run a command in the terminal"""
-    def __init__( self, name, cmd = "" ):
-        super( Cmd, self ).__init__( name )
-        self.cmd = cmd #: The command to run
 
-    def run( self ):
+    def __init__(self, name, cmd=""):
+        super(Cmd, self).__init__(name)
+        self.cmd = cmd  #: The command to run
+
+    def run(self):
         from os import system
-        system( self.cmd )
+        system(self.cmd)
 
-        if not self.menu.is_automated: raw_input( "\nFinished...." )
+        if not self.menu.is_automated:
+            try:
+                raw_input("\nFinished....")
+            except NameError:
+                input("\nFinished....")
